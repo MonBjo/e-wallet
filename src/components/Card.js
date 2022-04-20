@@ -7,20 +7,22 @@ import Bitcoin from '../assets/._vendor-bitcoin.svg';
 function Card() {
   return (
     <article className="card">
-      <img src={ Wifi } alt='chip' className="card--wifi" />
-      <img src={ ChipDark } alt='chip' className="card--chip" />
+      <section className="card--connection">
+        <img src={ Wifi } alt='wifi icon' className="card--wifi" />
+        <img src={ ChipDark } alt='chip' className="card--chip" />
+      </section>
       <img src={ Bitcoin } alt='bitcoin logo' className="card--vendor" />
       
       <h2 className="card--number">1234 5678 9012 3456</h2>
 
       <section className="card--name">
         <h3 className='card--title'>Cardholder name</h3>
-        <p>John Doe</p>
+        <p className='card--info'>John Doe</p>
       </section>
 
       <section className="card--date">
         <h3 className="card--title">Valid thru</h3>
-        <p>10/24</p>
+        <p className='card--info'>10/24</p>
       </section>
     </article>
   );

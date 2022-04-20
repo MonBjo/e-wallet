@@ -1,30 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
 .card {
-  width: 80%;
-  padding: 5px;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
   border-radius: 10px;
+  padding: 20px;
   box-shadow: 0 0 10px 0px rgb(59, 59, 59);
-  font-family: 'PT Mono', monospace;
   background-color: gray;
+
+  color: rgb(20, 20, 20);
+  font-family: 'PT Mono', monospace;
+  text-shadow: -1px -1px 1px #ffffff62, 1px 1px 1px #000000a1;
 
   display: grid;
   justify-content: center;
   align-items: center;
   grid-template-areas: 
-  "wifi vendor"
-  "chip vendor"
+  "connection vendor"
   "number number"
   "name date";
 }
 
-.card--wifi { grid-area: wifi; }
-.card--chip { grid-area: chip; }
-.card--vendor { grid-area: vendor; }
+.card--connection { 
+  grid-area: connection;
+  
+  width: fit-content;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card--vendor { 
+  grid-area: vendor; 
+  margin-left: auto;
+}
 
 .card--number {
   grid-area: number;
   text-align: center;
+  letter-spacing: 0.1em;
 }
 
 .card--name {
@@ -39,4 +55,9 @@
 .card--title {
   text-transform: uppercase;
   font-size: 0.7rem;
+  margin: 0;
+}
+
+.card--info {
+  margin: 0;
 }

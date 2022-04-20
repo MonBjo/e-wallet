@@ -1,7 +1,14 @@
+import './CardStack.css';
+
+import Card from './Card';
 
 function CardStack() {
   return (
-    <section>CardStack</section>
+    <section className="cards">
+      < Card />
+      < Card />
+      < Card />
+    </section>
   );
 }
 

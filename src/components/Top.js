@@ -1,10 +1,11 @@
+import './Top.css';
 
 function Top() {
   return (
-    <section>
-      <h1>Title</h1>
-      <span>Subtitle</span>
-    </section>
+    <header className="header">
+      <h1 className="header--title">Title</h1>
+      <p className="header--subtitle">Subtitle</p>
+    </header>
   );
 }
 
