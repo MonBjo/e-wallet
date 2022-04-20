@@ -1,8 +1,13 @@
 import './App.css';
 
+import Card from './components/Card';
+
 function App() {
   return (
-    <section>App</section>
+    <section className="App">
+      App
+      <Card />
+    </section>
   );
 }
 
