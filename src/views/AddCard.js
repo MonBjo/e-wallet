@@ -9,7 +9,11 @@ function AddCard() {
   return (
     <article className="addCardPage">
       <Top title="Add a new bank card" subtitle="new card" />
-      <Card number="1234 5678 9024 6803" name="John Doe" valid="11/24" vendor="Bitcoin" />
+      <Card 
+      number={"0000 0000 0000 0000"} 
+      name="John Doe" 
+      valid="01/23" 
+      vendor="placeholder" />
       <CardForm />
     </article>
   );

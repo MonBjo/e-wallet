@@ -12,19 +12,51 @@ import Ninja from '../assets/._vendor-ninja.svg';
 // TODO: Skapa klick-event för att skjuta upp kortet
 
 function Card(props) {
-  let {number, name, valid, vendor } = props;
+  let {number, name, valid, vendor, background, chip } = props;
+  
+  setVendorLogo();
+  setCardColor();
+  setChipColor();
 
-  if( vendor === "Bitcoin") {
-    vendor = Bitcoin;
-  } else if(vendor === "Blockchain") {
-    vendor = Blockchain;
+  function setVendorLogo() {
+    if( vendor === "Bitcoin") {
+      vendor = Bitcoin;
+    } else if(vendor === "Blockchain") {
+      vendor = Blockchain;
+    } else if(vendor === "Evil"){
+      vendor = Evil;
+    } else if(vendor === "Ninja"){
+      vendor = Ninja;
+    } else {
+      vendor = Bitcoin;
+    }  
   }
 
+  function setCardColor() {
+    if( vendor === "Bitcoin") {
+      background = "#FFAE34";
+    } else if(vendor === "Blockchain") {
+      background = "#8B58F9";
+    } else if(vendor === "Evil"){
+      background = "#F33355";
+    } else if(vendor === "Ninja"){
+      background = "#222222";
+    }
+  }
+
+  function setChipColor() {   
+    if( vendor === "Bitcoin" || vendor === "Evil" || vendor === "Ninja") {
+      chip = ChipLight;
+    } else {
+      chip = ChipDark;
+    }
+  }
+  
   return (
-    <article className="card">
+    <article className="card" style={{backgroundColor: background}}>
       <section className="card--connection">
         <img src={ Wifi } alt='wifi icon' className="card--wifi" />
-        <img src={ ChipDark } alt='chip' className="card--chip" />
+        <img src={ chip } alt='chip' className="card--chip" />
       </section>
       <img src={ vendor } alt="vendor logo" className="card--vendor" />
       

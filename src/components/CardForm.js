@@ -1,8 +1,10 @@
 import './CardForm.css';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-function CardForm() {
+function CardForm(props) {
   const navigate = useNavigate();
+  const {number, name, valid, vendor, ccv } = props;
 
   function submitForm(event) {
     event.preventDefault();
@@ -12,7 +14,7 @@ function CardForm() {
       cardNumber: event.id.number,
       cardholderName: event.name,
       validThru: event.endDate,
-      CCV: event.CCV, 
+      ccv: event.ccv, 
       vendor: event.vendor
     }
     console.log("card: ", card);

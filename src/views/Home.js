@@ -16,7 +16,6 @@ function Home() {
   return (
     <article className="homePage">
       <Top title="E-Wallet" subtitle="Active card" />
-      <Card />
       <CardStack />
       <button onClick={ navAddCard } className="button button--home" >Add a new card</button>
     </article>
