@@ -1,0 +1,29 @@
+.form {
+  color: rgb(20, 20, 20);
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+
+.form--title {
+  font-family: 'PT Mono', monospace;
+  margin-bottom: 5px;
+  color: #1f1f1f;
+  font-size: 0.8rem;
+}
+
+.form--input { 
+  width: 100%;
+  padding: 10px 5px;
+  font-family: 'PT Mono', monospace;
+  font-size: 1rem;
+  border: 1px solid #1f1f1f;
+  border-radius: 5px;
+}
+
+.form--smallFields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+  column-gap: 10px;
+}

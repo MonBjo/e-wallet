@@ -1,10 +1,12 @@
 import './Top.css';
 
-function Top() {
+function Top(props) {
+  const { title, subtitle } = props;
+
   return (
     <header className="header">
-      <h1 className="header--title">Title</h1>
-      <p className="header--subtitle">Subtitle</p>
+      <h1 className="header--title">{ title }</h1>
+      <p className="header--subtitle">{ subtitle }</p>
     </header>
   );
 }

@@ -1,5 +1,6 @@
 import './Error.css';
 import { useNavigate } from 'react-router-dom';
+import Top from '../components/Top';
 
 function Error() {
   const navigate = useNavigate();
@@ -9,9 +10,10 @@ function Error() {
   }
 
   return (
-    <article className="errorpage">
+    <article className="errorPage">
+      <Top title="404" subtitle="What are you looking for?" />
       <img src="https://i.imgur.com/VsX07cZ.gif" alt="le gif" />
-      <button onClick={ navHome } >Go home</button>
+      <button onClick={ navHome } className="button button--error" >Go home</button>
     </article>
   );
 }
