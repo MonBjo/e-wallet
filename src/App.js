@@ -5,7 +5,40 @@ import Home from './views/Home';
 import AddCard from './views/AddCard';
 import Error from './views/Error';
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+  TODO: 
+ - Make the form work.
+ - Update cardstack when a card is removed.
+ - Prevent user from deleting card when no card is active.
+ - Fix so the cards get the right logo.
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 function App() {
+
+  addExampleCards();
+
+  function addExampleCards() {
+    const savedCards = [
+      {
+        number: "5948 3201 4865 1422", 
+        name: "Anna Andersson",
+        endDate: "04/24",
+        vendor: "Blockchain",
+        ccv: 142 
+      },
+      { 
+        number: "7842 0406 4544 6580", 
+        name: "Anna Andersson",
+        endDate: "10/26",
+        vendor: "Evil",
+        ccv: 830 
+      }
+    ];
+    localStorage.clear();
+    localStorage.setItem("cardStack", JSON.stringify(savedCards));
+    console.log(savedCards);
+  }
+
   return (
     <section className="App">
       <Routes>

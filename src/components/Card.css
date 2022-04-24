@@ -7,7 +7,6 @@
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px 0px rgb(59, 59, 59);
-  background-color: gray;
 
   color: rgb(20, 20, 20);
   font-family: 'PT Mono', monospace;
@@ -20,6 +19,11 @@
   "connection vendor"
   "number number"
   "name date";
+}
+
+.activeCard {
+  position: absolute;
+  top: 120px;
 }
 
 .card--connection { 

@@ -8,15 +8,36 @@ import Bitcoin from '../assets/._vendor-bitcoin.svg';
 import Blockchain from '../assets/._vendor-blockchain.svg';
 import Evil from '../assets/._vendor-evil.svg';
 import Ninja from '../assets/._vendor-ninja.svg';
-
-// TODO: Skapa klick-event för att skjuta upp kortet
+import { useState } from 'react';
 
 function Card(props) {
-  let {number, name, valid, vendor, background, chip } = props;
-  
-  setVendorLogo();
+  let {number, name, endDate, vendor, background, chip } = props;
+  const [classNames, setClassNames] = useState('card');
   setCardColor();
   setChipColor();
+  setVendorLogo();
+
+  function setCardColor() {
+    if( vendor === "Bitcoin") {
+      background = "#FFAE34";
+    } else if(vendor === "Blockchain") {
+      background = "#8B58F9";
+    } else if(vendor === "Evil"){
+      background = "#F33355";
+    } else if(vendor === "Ninja"){
+      background = "#222222";
+    } else {
+      background = "gray";
+    }
+  }
+
+  function setChipColor() {   
+    if( vendor === "Bitcoin" || vendor === "Evil" || vendor === "Ninja") {
+      chip = ChipLight;
+    } else {
+      chip = ChipDark;
+    }
+  }
 
   function setVendorLogo() {
     if( vendor === "Bitcoin") {
@@ -31,29 +52,18 @@ function Card(props) {
       vendor = Bitcoin;
     }  
   }
-
-  function setCardColor() {
-    if( vendor === "Bitcoin") {
-      background = "#FFAE34";
-    } else if(vendor === "Blockchain") {
-      background = "#8B58F9";
-    } else if(vendor === "Evil"){
-      background = "#F33355";
-    } else if(vendor === "Ninja"){
-      background = "#222222";
-    }
-  }
-
-  function setChipColor() {   
-    if( vendor === "Bitcoin" || vendor === "Evil" || vendor === "Ninja") {
-      chip = ChipLight;
-    } else {
-      chip = ChipDark;
-    }
-  }
   
+  function cardClick() {
+    let cards = document.querySelectorAll('.card');
+    for(let card of cards) {
+      card.className = 'card';
+    }
+
+    setClassNames(classNames + ` activeCard`);
+  }
+
   return (
-    <article className="card" style={{backgroundColor: background}}>
+    <article className={classNames} style={{backgroundColor: background}} onClick={ cardClick } >
       <section className="card--connection">
         <img src={ Wifi } alt='wifi icon' className="card--wifi" />
         <img src={ chip } alt='chip' className="card--chip" />
@@ -69,7 +79,7 @@ function Card(props) {
 
       <section className="card--date">
         <h3 className="card--title">Valid thru</h3>
-        <p className='card--info'>{ valid }</p>
+        <p className='card--info'>{ endDate }</p>
       </section>
     </article>
   );

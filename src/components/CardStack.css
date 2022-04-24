@@ -1,6 +1,6 @@
 .cards {
+  margin-top: auto;
   display: grid;
   grid-auto-rows: 2.5rem;
   margin: 2rem 0;
-  margin-bottom: 200px;
 }
