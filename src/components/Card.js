@@ -16,7 +16,7 @@ function Card(props) {
   setCardColor();
   setChipColor();
   setVendorLogo();
-
+  
   function setCardColor() {
     if( vendor === "Bitcoin") {
       background = "#FFAE34";
@@ -30,7 +30,7 @@ function Card(props) {
       background = "gray";
     }
   }
-
+  
   function setChipColor() {   
     if( vendor === "Bitcoin" || vendor === "Evil" || vendor === "Ninja") {
       chip = ChipLight;
@@ -38,14 +38,14 @@ function Card(props) {
       chip = ChipDark;
     }
   }
-
+  
   function setVendorLogo() {
     if( vendor === "Bitcoin") {
       vendor = Bitcoin;
-    } else if(vendor === "Blockchain") {
-      vendor = Blockchain;
     } else if(vendor === "Evil"){
       vendor = Evil;
+    } else if(vendor === "Blockchain") {
+      vendor = Blockchain;
     } else if(vendor === "Ninja"){
       vendor = Ninja;
     } else {

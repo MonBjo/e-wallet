@@ -23,14 +23,14 @@ function App() {
         number: "5948 3201 4865 1422", 
         name: "Anna Andersson",
         endDate: "04/24",
-        vendor: "Blockchain",
+        vendor: "Ninja",
         ccv: 142 
       },
       { 
         number: "7842 0406 4544 6580", 
         name: "Anna Andersson",
         endDate: "10/26",
-        vendor: "Evil",
+        vendor: "Blockchain",
         ccv: 830 
       }
     ];

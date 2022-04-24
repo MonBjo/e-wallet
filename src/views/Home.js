@@ -11,6 +11,7 @@ function Home() {
   function navAddCard() {
     navigate('/addcard');
   }
+
   function removeCard(event) {
     event.preventDefault();
     const cardToRemove = document.querySelector('.activeCard');
