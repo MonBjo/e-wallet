@@ -1,15 +1,15 @@
 import './App.css';
-import { Routes, Route, Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from './views/Home';
 import AddCard from './views/AddCard';
 import Error from './views/Error';
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
   TODO: 
  - Update cardstack when a card is removed.
- - Prevent user from deleting card when no card is active.
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ - CardStack: Each child in a list should have a unique "key" prop.
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 function App() {
 

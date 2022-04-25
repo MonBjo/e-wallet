@@ -56,11 +56,8 @@ function CardForm() {
 
     if(number+name+endDate+ccv+vendor === "") {
       navHome();
-    } else if (number.length > 16 && 
-               name.length > 4 && 
-               endDate.length === 5 && 
-               ccv.length === 3 && 
-               vendor.length > 0){
+    } else if (number.length > 16 && name.length > 4 && 
+      endDate.length === 5 && ccv.length === 3 &&vendor.length > 0){
       let newCardStack = getCardStack();
       newCardStack.push({
         number: number, 
@@ -71,7 +68,7 @@ function CardForm() {
       });
       localStorage.setItem("cardStack", JSON.stringify(newCardStack));
       
-      console.log(newCardStack);
+      console.log("newCardStack: ", newCardStack);
       navHome();
     }else {
       alert("please fill out all the fields");
@@ -90,29 +87,41 @@ function CardForm() {
   return (
     <form className="form">
         <p className="form--title">Card number</p>
-        <input className="form--input" type="text" 
-        placehoder="0000 0000 0000 0000" 
-        value={ number } 
-        onChange={ getCardnumber } />
+        <input 
+          className="form--input" 
+          type="text" 
+          placehoder="0000 0000 0000 0000" 
+          value={ number } 
+          onChange={ getCardnumber } 
+        />
 
         <p className="form--title">Cardholder name</p>
-        <input className="form--input" type="text" 
-        placeholder="John Doe"
-        value={ name } 
-        onChange={ getName } />
+        <input 
+          className="form--input" 
+          type="text" 
+          placeholder="John Doe"
+          value={ name } 
+          onChange={ getName } 
+        />
 
         <section className="form--smallFields">
           <p className="form--title">Valid thru</p>
-          <input className="form--input" type="text" 
-          placeholder="05/28"
-          value={ endDate } 
-          onChange={ getEndDate } />
+          <input 
+            className="form--input" 
+            type="text" 
+            placeholder="05/28"
+            value={ endDate } 
+            onChange={ getEndDate } 
+          />
 
           <p className="form--title">CCV</p>
-          <input className="form--input" type="number" 
-          placeholder="136"
-          value={ ccv } 
-          onChange={ getCcv } />
+          <input 
+            className="form--input" 
+            type="number" 
+            placeholder="136"
+            value={ ccv } 
+            onChange={ getCcv } 
+          />
         </section>
 
         <p className="form--title">Vendor</p>

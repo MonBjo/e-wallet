@@ -22,7 +22,7 @@ function Home() {
       
       const cardStack = JSON.parse(localStorage.cardStack);
       const newCardStack = cardStack.filter(card => card.number !== cardNumberToRemove);
-      console.log(newCardStack);
+      console.log("newCardStack: ", newCardStack);
         
       localStorage.clear();
       localStorage.setItem("cardStack", JSON.stringify(newCardStack));
