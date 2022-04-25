@@ -53,7 +53,7 @@ function Card(props) {
     }  
   }
   
-  function cardClick() {
+  function updateClassNames() {
     let cards = document.querySelectorAll('.card');
     for(let card of cards) {
       card.className = 'card';
@@ -62,8 +62,9 @@ function Card(props) {
     setClassNames(classNames + ` activeCard`);
   }
 
+  
   return (
-    <article className={classNames} style={{backgroundColor: background}} onClick={ cardClick } >
+    <article className={classNames} style={{backgroundColor: background}} onClick={ updateClassNames } >
       <section className="card--connection">
         <img src={ Wifi } alt='wifi icon' className="card--wifi" />
         <img src={ chip } alt='chip' className="card--chip" />

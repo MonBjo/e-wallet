@@ -8,7 +8,6 @@ import Top from '../components/Top';
 
 function Home() {
   const navigate = useNavigate();
-  //let amountOfCards = 0;
   const [newAmountOfCards, setAmountOfCards] = useState(0);
 
   function navAddCard() {
@@ -18,21 +17,23 @@ function Home() {
   function removeCard(event) {
     event.preventDefault();
     const cardToRemove = document.querySelector('.activeCard');
+
     if(cardToRemove == null) {
       alert("Please select a card to delete it.");
     } else {
       const cardNumberToRemove = cardToRemove.querySelector('.card--number').innerHTML;
-      
       const cardStack = JSON.parse(localStorage.cardStack);
+
+      /* Filter out the card in cardStack that has 
+       the same number as the card to be removed */
       const newCardStack = cardStack.filter(card => card.number !== cardNumberToRemove);
-      console.log("newCardStack: ", newCardStack);
       setAmountOfCards(cardStack.length);
-      console.log("newAmountOfCards: ", newAmountOfCards);
         
       localStorage.clear();
       localStorage.setItem("cardStack", JSON.stringify(newCardStack));
     }
   }
+  
   
   return (
     <article className="homePage">

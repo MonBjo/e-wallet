@@ -31,38 +31,43 @@ function CardForm() {
       setVendor(event.target.value);
   }
 
+
   function submitForm(event) {
     event.preventDefault();
 
-    if(number+name+endDate+ccv+vendor === "") {
+    if(number + name + endDate + ccv + vendor === "") {
       navHome();
-    } else if (number.length > 16 && name.length > 4 && 
-      endDate.length === 5 && ccv.length === 3 &&vendor.length > 0){
-      let newCardStack = getCardStack();
-      newCardStack.push({
-        number: number, 
-        name: name,
-        endDate: endDate,
-        vendor: vendor,
-        ccv: ccv 
-      });
-      localStorage.setItem("cardStack", JSON.stringify(newCardStack));
-      
-      console.log("newCardStack: ", newCardStack);
+    } else if (number.length > 18 && name.length > 4 && 
+      endDate.length === 5 && ccv.length === 3 && vendor.length > 0) {
+      addNewCard();
       navHome();
     }else {
-      alert("please fill out all the fields");
+      alert("please fill out all the fields properly");
     }
   }
 
   function navHome() {
     navigate('/');
   }
+
+  function addNewCard() {
+    let newCardStack = getCardStack();
+    newCardStack.push({
+      number: number, 
+      name: name,
+      endDate: endDate,
+      vendor: vendor,
+      ccv: ccv 
+    });
+    localStorage.setItem("cardStack", JSON.stringify(newCardStack));
+  }
+
   function getCardStack() {
     const cardStack = JSON.parse(localStorage.cardStack);
     localStorage.clear();
     return cardStack;
   }
+
 
   return (
     <form className="form">

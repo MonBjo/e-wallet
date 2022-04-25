@@ -8,6 +8,7 @@ function AddCard() {
   return (
     <article className="addCardPage">
       <Top title="Add a new bank card" subtitle="new card" />
+      
       <Card 
       number="0000 0000 0000 0000" 
       name="John Doe" 
