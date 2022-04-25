@@ -1,12 +1,15 @@
 import './Home.css';
 
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import CardStack from '../components/CardStack';
 import Top from '../components/Top';
 
 function Home() {
   const navigate = useNavigate();
+  //let amountOfCards = 0;
+  const [newAmountOfCards, setAmountOfCards] = useState(0);
 
   function navAddCard() {
     navigate('/addcard');
@@ -23,6 +26,8 @@ function Home() {
       const cardStack = JSON.parse(localStorage.cardStack);
       const newCardStack = cardStack.filter(card => card.number !== cardNumberToRemove);
       console.log("newCardStack: ", newCardStack);
+      setAmountOfCards(cardStack.length);
+      console.log("newAmountOfCards: ", newAmountOfCards);
         
       localStorage.clear();
       localStorage.setItem("cardStack", JSON.stringify(newCardStack));
@@ -33,7 +38,7 @@ function Home() {
     <article className="homePage">
       <Top title="E-Wallet" subtitle="Active card" />
       
-      <CardStack />
+      <CardStack amountOfCards={ newAmountOfCards } />
 
       <section className="homePage--buttons">
         <button onClick={ navAddCard } className="button button--home" >Add a new card</button>

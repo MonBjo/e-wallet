@@ -2,22 +2,29 @@ import './CardStack.css';
 
 import Card from './Card';
 
-function CardStack() {
+function CardStack(props) {
+  const { newAmountOfCards } = props;
   const cardStack = JSON.parse(localStorage.cardStack);
-  const cardItems = cardStack.map((card) => { 
-    //console.log(card);
-    return <Card 
-    number={ card.number } 
-    name={ card.name }
-    endDate={ card.endDate } 
-    vendor={ card.vendor } />
-  });
+  
+  console.log("amountOfCards: ", newAmountOfCards);
+  console.log("cardStack.length: ", cardStack.length);
 
-  return (
-    <section className="cards">
-      { cardItems }
-    </section>
-  );
+  if(newAmountOfCards !== cardStack.length){
+    const cardItems = cardStack.map((card) => { 
+      //console.log(card);
+      return <Card 
+      number={ card.number } 
+      name={ card.name }
+      endDate={ card.endDate } 
+      vendor={ card.vendor } />
+    });
+    
+    return (
+      <section className="cards">
+        { cardItems }
+      </section>
+    );
+  }
 }
 
 export default CardStack;

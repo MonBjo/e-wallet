@@ -12,43 +12,23 @@ function CardForm() {
   const [vendor, setVendor] = useState("");
 
   function getCardnumber(event) {
-    try {
       setCardnumber(event.target.value);
-    } catch(error) {
-      console.log("getCardnumber error: ", error);
-    }
   }
 
   function getName(event) {
-    try {
       setName(event.target.value);
-    } catch(error) {
-      console.log("getName error: ", error);
-    }
   }
 
   function getEndDate(event) {
-    try {
       setEndDate(event.target.value);
-    } catch(error) {
-      console.log("getEndDate error: ", error);
-    }
   }
 
   function getCcv(event) {
-    try {
       setCcv(event.target.value);
-    } catch(error) {
-      console.log("getCcv error: ", error);
-    }
   }
   
   function getVendor(event) {
-    try {
       setVendor(event.target.value);
-    } catch(error) {
-      console.log("getVendor error: ", error);
-    }
   }
 
   function submitForm(event) {
