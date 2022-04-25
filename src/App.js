@@ -7,10 +7,8 @@ import Error from './views/Error';
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
   TODO: 
- - Make the form work.
  - Update cardstack when a card is removed.
  - Prevent user from deleting card when no card is active.
- - Fix so the cards get the right logo.
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 function App() {
@@ -34,7 +32,6 @@ function App() {
         ccv: 830 
       }
     ];
-    localStorage.clear();
     localStorage.setItem("cardStack", JSON.stringify(savedCards));
     console.log(savedCards);
   }
