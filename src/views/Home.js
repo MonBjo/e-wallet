@@ -21,12 +21,11 @@ function Home() {
       const cardNumberToRemove = cardToRemove.querySelector('.card--number').innerHTML;
       
       const cardStack = JSON.parse(localStorage.cardStack);
-      const newCardStack = cardStack.filter(card => card.number === cardNumberToRemove);
+      const newCardStack = cardStack.filter(card => card.number !== cardNumberToRemove);
       console.log(newCardStack);
         
       localStorage.clear();
       localStorage.setItem("cardStack", JSON.stringify(newCardStack));
-      CardStack.setState();
     }
   }
   
