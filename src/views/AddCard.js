@@ -5,7 +5,6 @@ import Card from '../components/Card';
 import CardForm from '../components/CardForm';
 
 function AddCard(props) {
-
   return (
     <article className="addCardPage">
       <Top title="Add a new bank card" subtitle="new card" />
