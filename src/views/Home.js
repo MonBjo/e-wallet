@@ -15,15 +15,19 @@ function Home() {
   function removeCard(event) {
     event.preventDefault();
     const cardToRemove = document.querySelector('.activeCard');
-    const cardNumberToRemove = cardToRemove.querySelector('.card--number').innerHTML;
-
-    const cardStack = JSON.parse(localStorage.cardStack);
-    const newCardStack = cardStack.filter(card => card.number === cardNumberToRemove);
-    console.log(newCardStack);
-
-    localStorage.clear();
-    localStorage.setItem("cardStack", JSON.stringify(newCardStack));
-    CardStack.setState();
+    if(cardToRemove == null) {
+      alert("Please select a card to delete it.");
+    } else {
+      const cardNumberToRemove = cardToRemove.querySelector('.card--number').innerHTML;
+      
+      const cardStack = JSON.parse(localStorage.cardStack);
+      const newCardStack = cardStack.filter(card => card.number === cardNumberToRemove);
+      console.log(newCardStack);
+        
+      localStorage.clear();
+      localStorage.setItem("cardStack", JSON.stringify(newCardStack));
+      CardStack.setState();
+    }
   }
   
   return (
