@@ -8,6 +8,7 @@
   padding: 20px;
   box-shadow: 0 0 10px 0px rgb(59, 59, 59);
 
+  user-select: none; /* bc it's ugly */
   color: rgb(20, 20, 20);
   font-family: 'PT Mono', monospace;
   text-shadow: -1px -1px 1px #ffffff62, 1px 1px 1px #000000a1;
