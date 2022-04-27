@@ -55,8 +55,8 @@ function Card(props) {
   }
   
   function updateClassNames() {
-    let cards = document.querySelectorAll('.card');
-    for(let card of cards) {
+    for(let card of cardsInStack) {
+      console.log("gief className plx");
       card.className = 'card';
     }
 
@@ -65,7 +65,7 @@ function Card(props) {
 
   
   return (
-    <article className={updateClassNames} style={{backgroundColor: background}} onClick={ updateClassNames } >
+    <article className={classNames} style={{backgroundColor: background}} onClick={ updateClassNames } >
       <section className={"card--connection"}>
         <img src={ Wifi } alt='wifi icon' className="card--wifi" />
         <img src={ chip } alt='chip' className="card--chip" />

@@ -17,8 +17,6 @@ function CardStack(props) {
       vendor={ card.vendor } />
     });
     
-    console.log("Do I get this prop, hmm? ", cardStack);
-    
     return (
       <section className="cards" >
         { cardItems }
