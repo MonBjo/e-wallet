@@ -11,11 +11,12 @@ import Ninja from '../assets/._vendor-ninja.svg';
 import { useState } from 'react';
 
 function Card(props) {
-  let {number, name, endDate, vendor, background, chip } = props;
+  let {number, name, endDate, vendor, background, chip, cardsInStack } = props;
   const [classNames, setClassNames] = useState('card');
   setCardColor();
   setChipColor();
   setVendorLogo();
+  console.log("Do I get this prop, hmm? ", cardsInStack);
   
   function setCardColor() {
     if( vendor === "Bitcoin") {
@@ -64,8 +65,8 @@ function Card(props) {
 
   
   return (
-    <article className={classNames} style={{backgroundColor: background}} onClick={ updateClassNames } >
-      <section className="card--connection">
+    <article className={updateClassNames} style={{backgroundColor: background}} onClick={ updateClassNames } >
+      <section className={"card--connection"}>
         <img src={ Wifi } alt='wifi icon' className="card--wifi" />
         <img src={ chip } alt='chip' className="card--chip" />
       </section>
