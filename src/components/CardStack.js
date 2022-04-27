@@ -16,7 +16,7 @@ function CardStack(props) {
       endDate={ card.endDate } 
       vendor={ card.vendor } />
     });
-    
+
     return (
       <section className="cards" >
         { cardItems }
